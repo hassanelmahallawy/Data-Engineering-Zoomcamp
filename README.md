@@ -29,7 +29,7 @@ SELECT SUM(CASE WHEN trip_distance <= 1 THEN 1 ELSE 0 END) AS up_to_1_mile,
        SUM(CASE WHEN trip_distance > 10 THEN 1 ELSE 0 END) AS over_10_miles
 FROM green_taxi
 WHERE CAST(lpep_pickup_datetime AS DATE) >= '2019-10-01' AND CAST(lpep_pickup_datetime AS DATE) < '2019-11-01';
-
+---
 
 ### 4️⃣ Longest Trip Date
 - **Answer**: `2019-10-31`
@@ -40,7 +40,7 @@ GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 1;```
 
-
+---
 ### 5️⃣ Top Pickup Zones
 Answer: East Harlem North, East Harlem South, Morningside Heights
 
@@ -53,7 +53,7 @@ HAVING SUM(total_amount) > 13000
 ORDER BY 2 DESC
 LIMIT 10;
 ```
-
+---
 ### 6️⃣ Largest Tip Zone
 Answer: `JFK Airport`
 ```SELECT zdo."Zone" AS dropoff_zone, MAX(tip_amount) AS max_tip
@@ -66,6 +66,6 @@ GROUP BY zdo."Zone"
 ORDER BY max_tip DESC
 LIMIT 1;
 ```
-
+---
 ### 7️⃣ Terraform Commands
 Answer: `terraform init, terraform apply -auto-approve, terraform destroy`
